@@ -1,0 +1,43 @@
+// {
+//  "manifest_version": 2,
+//  "name": "PrivacyWijzer",
+//  "description": "De kijkwijzer voor online privacy: de PrivacyWijzer.",
+//  "version": "1.0",
+//  "author": "Paul Geraets",
+// "browser_action": {
+//    "default_popup": "popup.html",
+//    "default_icon": "images/privacymeter.png",
+//    "default_title": "Privacy Meter"
+//  },
+// // "chrome_url_overrides" : {
+// //   "newtab": "newtab.html"
+// // },
+//  "permissions": ["activeTab"]
+// }
+
+{
+
+ "manifest_version": 2,
+ "name": "Privacy Wijzer",
+"description": "De kijkwijzer voor online privacy: de Privacy Wijzer",
+"version": "1.0",
+"author": "Paul Geraets",
+"content_scripts": [
+ {
+    //Set your address you want the extension will work in mataches!!! 
+ // "matches": ["<all_urls>"],
+  "js":["jquery.1.9.1.min.js", "background.js"],
+  "matches": ["*://nu.nl/", "*://*.nu.nl/*", "*://tweakers.net/"],
+ // "matches": ["https://*.nu.nl/*", "https://*.nu.nl/*", "http://www.tweakers.net/*", "https://www.tweakers.net/*"],
+  "run_at": "document_end"
+ }
+],  
+"permissions": [
+              "activeTab"
+             ],
+ "browser_action": {
+ "default_icon": "images/logo.png",
+ "default_popup": "popup.html"
+ }
+
+}
