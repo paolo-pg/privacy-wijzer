@@ -19,18 +19,20 @@ window.onload=function(){
 
 	var page = [document.body];
 	var storedText;
-	var woord1 = "locatie"; 
-	var woord2 = "mobile_device"; //apparaatinfo
-	var woord3 = "advertenties";
-	var woord4 = "derde partijen"; //
+	var woord1 = "locatie"; // facebook // 
+	var woord2 = "apparaatidentificaties"; //apparaatinfo facebook
+	var woord3 = "advertenties"; //addclicks //facebook // tweakers
+	var woord4 = "derden"; //tweakers //facebook
 
 	var websitePrivacy = window.location.href;
-	if (websitePrivacy == 'https://www.nu.nl/') {
-		console.log("NU.NL LOCATION")
-		fetch('https://www.sanoma.nl/cookie-overzicht/')
+	console.log(websitePrivacy);
+	if (websitePrivacy == 'https://www.facebook.com/') {
+		console.log("FACEBOOK.COM LOCATION")
+		fetch('https://www.facebook.com/policies/cookies/')
 		.then(function(response) {
 			response.text().then(function(text) {
 				storedText = text;
+				console.log("FACEBOOK.COM FETCH GELUKT")
 				done();
 			});
 		});
@@ -47,7 +49,8 @@ window.onload=function(){
 	}
 	else {
 		console.log(websitePrivacy);
-		console.log("NIET NU.NL")
+		div.innerHTML += "Ga naar de beginpagina van deze website om privacywijzer te activeren.";
+		div.innerHTML += "<img id='logo-privacy' src=\"http://i334115.iris.fhict.nl/icon/logo.svg\" height=\"200px\">";
 	}
 
 	function done() {
@@ -92,7 +95,6 @@ window.onload=function(){
   	}
 
   	// hide button
-
   	var button = document.getElementById("hide");
   	document.getElementById("newLine").style.clear = 'left';
   	document.getElementById("newLine").style.margin = '0px';
@@ -103,6 +105,7 @@ window.onload=function(){
   	button.style.cursor = 'pointer';
   	button.style.border = 'none';
   	button.style.cssFloat = 'right';
+  	
   	// logo
   	var logo = document.getElementById("logo-privacy");
   	logo.style.cssFloat = 'right';
@@ -119,7 +122,7 @@ window.onload=function(){
   		}
   	})();
 	} // function done
- }//while onload line #1
+ } //while onload line #1
 
 
 
