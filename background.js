@@ -84,15 +84,32 @@ window.onload=function(){
 		div.innerHTML += "<img id='logo-privacy' src=\"http://i334115.iris.fhict.nl/icon/logo.svg\" height=\"200px\">";
 		div.innerHTML += "<br><p id='newLine'><button id='hide'>Verbergen</button></p>";
 
-  	// functie voor de div te hiden via verbergen knop
-  	document.getElementById("hide").onclick = function() {myFunction()};
-  	function myFunction() {
-  		if (div.style.display === "none") {
-  			div.style.display = "block";
-  		} else {
-  			div.style.display = "none";
-  		}
-  	}
+
+
+  	// hide localstorage script
+	$(document).ready(function () {
+		console.log('Functie is klaar');
+		$('#hide').click(function () {
+			console.log('geklikt');
+        $(this).siblings().toggle();
+        localStorage.setItem('display', $(this).siblings().is(':visible'));
+
+        $('#hide').hide();
+        $('.myclass').hide();
+    });
+
+		var block = localStorage.getItem('display');
+
+		if (block == 'true') {
+			$('.myclass').show() && $('#hide').hide();
+			console.log('hierhierhier');
+		}
+		if (block == 'false') {
+			$('.myclass').hide() && $('#hide').hide();
+			console.log('wegwegweg');
+		}
+
+	});
 
   	// hide button
   	var button = document.getElementById("hide");
@@ -123,6 +140,7 @@ window.onload=function(){
   	})();
 	} // function done
  } //while onload line #1
+
 
 
 
