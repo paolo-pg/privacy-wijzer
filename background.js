@@ -1,8 +1,4 @@
-
-
 window.onload=function(){
-
-
 	
 	var div = document.createElement('div');
 	
@@ -88,17 +84,9 @@ window.onload=function(){
 		div.innerHTML += "<img id='logo-privacy' src=\"http://i334115.iris.fhict.nl/icon/logo.svg\" height=\"200px\">";
 		div.innerHTML += "<br><p id='newLine'><button id='hide'>Verbergen</button></p>";
 
-  	// functie voor de div te hiden via verbergen knop
-  	// document.getElementById("hide").onclick = function() {myFunction()};
-  	// function myFunction() {
-  	// 	if (div.style.display === "none") {
-  	// 		div.style.display = "block";
-  	// 	} else {
-  	// 		div.style.display = "none";
-  	// 	}
-  	// }
 
 
+  	// hide localstorage script
 	$(document).ready(function () {
 		console.log('Functie is klaar');
 		$('#hide').click(function () {
@@ -108,7 +96,6 @@ window.onload=function(){
 
         $('#hide').hide();
         $('.myclass').hide();
-
     });
 
 		var block = localStorage.getItem('display');
@@ -152,13 +139,6 @@ window.onload=function(){
   		}
   	})();
 	} // function done
-
-
-
-
-
-
-
  } //while onload line #1
 
 
