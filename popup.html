@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="stylesheet" href="bootstrap.min.css">
 	<style>
 	body {
 		margin: 0;
 		background: #fafafa;
 		padding: 20px;
 		font-family: Open sans;
+		font-size: 12px;
 	}
 
 	#popup {
 		min-height: 100px;
-		min-width: 200px;
+		min-width: 450px;
+	}
+
+	p {
+		margin-top: 5px;
+	}
+
+	img {
+		height: 30px;
+	}
+
+	#logo {
+		height: 100px;
 	}
 	</style>
 	<meta charset="UTF-8">
@@ -20,9 +34,102 @@
 </head>
 <body>
 	<div id="popup">
-		<h2>Privacy meter</h2>
-		<p><italic>“We zien niet wat er met onze gegevens gebeurt. We zien niet welke overheden, bedrijven en criminelen op onze data jagen, hoe ze dat doen, waarom ze het doen, wat ze er uiteindelijk mee doen en hoe dit onze levens beïnvloedt.” (Correspondent)</italic></p>
-		<p><a href="#">Klik hier voor meer informatie</a></p>
+		<img id="logo" src="http://i334115.iris.fhict.nl/icon/logo.png" alt="">
+		<p class="pt-3">Privacywijzer geeft je op een snelle en overzichtelijke manier inzicht in welke data websites van jou als gebruiker opslaan of gebruiken. Het doel is om mensen duidelijk te maken welke data, websites van jou gebruiken zonder dat je de hele privacy en/of cookie voorwaarden hoeft te lezen, die vaak erg lang en onduidelijk zijn. Privacywijzer analyseert deze voorwaarden voor jou.</p>
+		<div class="row">
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/addclicks.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Ad clicks</p>
+			</div>
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/apparaat.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Apparaat informatie</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/browser.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Browsergegevens</p>
+			</div>
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/dataderde.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Data aan derden</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/email.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Je e-mail adres</p>
+			</div>
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/gezichtsherkenning.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Camera</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/ipadres.svg" alt="">
+			</div>
+			<div class="col">
+				<p>IP adres</p>
+			</div>
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/locatie.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Locatie</p>
+			</div>
+		</div>
+			<div class="row">
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/microfoon.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Microfoon</p>
+			</div>
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/profiel.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Profiel gegevens</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/telefoonnummer.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Telefoonnummer</p>
+			</div>
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/tijdendatum.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Tijd en datum</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-2">
+				<img src="http://i334115.iris.fhict.nl/icon/zoekopdrachten.svg" alt="">
+			</div>
+			<div class="col">
+				<p>Zoekopdrachten</p>
+			</div>
+		</div>
+		
+		<p><a href="#">Meer informatie op www.privacywijzer.nl</a></p>
 	</div>
 
 

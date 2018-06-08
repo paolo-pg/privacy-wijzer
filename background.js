@@ -129,37 +129,26 @@ window.onload=function(){
   	logo.style.height = '50px';
   	logo.style.margin = '5px 50px 0px 0px';
 
-  	// //hover
-  	// var sourceSwap = function () {
-  	// 	var $this = $(this);
-  	// 	var newSource = $this.data('alt-src');
-  	// 	$this.data('alt-src', $this.attr('src'));
-  	// 	$this.attr('src', newSource);
-  	// }
-  	// $(function() {
-  	// 	$('img[data-alt-src]').each(function() { 
-  	// 		new Image().src = $(this).data('alt-src'); 
-  	// 	}).hover(sourceSwap, sourceSwap); 
-  	// });
-  	// //
-
-  	$(".icon").hover(function(){
-     $(this).attr('src', 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg');
-    }, function(){
-    $(this).attr('src', 'https://i334115.iris.fhict.nl/icon/addclicks.svg');
-	});
+  	$(".icon").hover(function(e){
+  		$(this).attr('src', 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg');
+  		e.preventDefault();
+  	}, function(){
+  		$(this).attr('src', 'https://i334115.iris.fhict.nl/icon/addclicks.svg');
+  	});
 
 
-var plus = 'https://i334115.iris.fhict.nl/icon/addclicks.svg';
-var minus = 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg';
+  	var plus = 'https://i334115.iris.fhict.nl/icon/addclicks.svg';
+  	var minus = 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg';
 
-$('.icon').click(function() {
-  if ($('.change').attr('src') === minus) {
-    $('.change').attr('src', minus);
-  } else {
-    $('.change').attr('src', plus)
-  }
-})
+  	$('.icon').click(function() {
+  		$(".icon").hover(function(e){
+  			if ($('.icon').attr('src') === plus) {
+  				$('.icon').attr('src', minus);
+  			} else {
+  				$('.icon').attr('src', plus)
+  			}
+  		});	
+  	})
 
   	$(document).ready(function(){
   		var icons = document.querySelectorAll("#icons");
