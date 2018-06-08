@@ -71,7 +71,7 @@ window.onload=function(){
 		}
 		if (found3 !== null) {
 			console.log("FOUND3");
-			div.innerHTML+="<li id='icons'><img class='icon' data-alt-src='http://i334115.iris.fhict.nl/icon/addclicks-2.svg' src=\"http://i334115.iris.fhict.nl/icon/addclicks.svg\" height=\"100px\"></li>";
+			div.innerHTML+="<li id='icons'><img class='icon' src=\"http://i334115.iris.fhict.nl/icon/addclicks.svg\" height=\"100px\"></li>";
 		}
 		if (found4 !== null) {
 			console.log("FOUND4");
@@ -129,7 +129,7 @@ window.onload=function(){
   	logo.style.height = '50px';
   	logo.style.margin = '5px 50px 0px 0px';
 
-  	// hover
+  	// //hover
   	// var sourceSwap = function () {
   	// 	var $this = $(this);
   	// 	var newSource = $this.data('alt-src');
@@ -140,29 +140,24 @@ window.onload=function(){
   	// 	$('img[data-alt-src]').each(function() { 
   	// 		new Image().src = $(this).data('alt-src'); 
   	// 	}).hover(sourceSwap, sourceSwap); 
-
   	// });
+  	// //
 
-  	// $(document).ready(function(){
-  	// 	$(".icon").attr("src","https://i334115.iris.fhict.nl/icon/addclicks.svg");
-  	// 	$(".change").attr("src","https://i334115.iris.fhict.nl/icon/addclicks-2.svg");
-  	// 	// $(".change").attr('src', '\https://i334115.iris.fhict.nl/icon/addclicks-2.svg');
-  	// });
+  	$(".icon").hover(function(){
+     $(this).attr('src', 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg');
+    }, function(){
+    $(this).attr('src', 'https://i334115.iris.fhict.nl/icon/addclicks.svg');
+	});
 
-  	// $(document).ready(function(){
-  	// 	$(".icon").click(function(){
-  	// 		$(".icon").toggleClass("change");
-  	// 	});
-  	// });
 
-var minus = 'https://i334115.iris.fhict.nl/icon/addclicks.svg';
-var plus = 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg';
+var plus = 'https://i334115.iris.fhict.nl/icon/addclicks.svg';
+var minus = 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg';
 
 $('.icon').click(function() {
-  if ($('.icon').attr('src') === plus) {
-    $('.icon').attr('src', minus);
+  if ($('.change').attr('src') === minus) {
+    $('.change').attr('src', minus);
   } else {
-    $('.icon').attr('src', plus)
+    $('.change').attr('src', plus)
   }
 })
 
