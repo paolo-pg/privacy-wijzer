@@ -23,6 +23,7 @@ window.onload=function(){
 	var woord2 = "apparaatidentificaties"; //apparaatinfo facebook
 	var woord3 = "advertenties"; //addclicks //facebook // tweakers
 	var woord4 = "derden"; //tweakers //facebook
+	var woord5 = "SessionTime"; //tweakers
 
 	var websitePrivacy = window.location.href;
 	console.log(websitePrivacy);
@@ -76,6 +77,10 @@ window.onload=function(){
 		if (found4 !== null) {
 			console.log("FOUND4");
 			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/dataderde.svg\" height=\"100px\"></li>";
+		}
+		if (found4 !== null) {
+			console.log("FOUND4");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/tijdendatum.svg\" height=\"100px\"></li>";
 		}
 		else if (found1 == null && found2 == null && found3 == null && found4 == null) {
 			div.innerHTML = "Deze website maakt geen gebruik van je gegevens.";
