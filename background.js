@@ -71,7 +71,7 @@ window.onload=function(){
 		}
 		if (found3 !== null) {
 			console.log("FOUND3");
-			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/addclicks.svg\" height=\"100px\"></li>";
+			div.innerHTML+="<li id='icons'><img class='icon' data-alt-src='http://i334115.iris.fhict.nl/icon/addclicks-2.svg' src=\"http://i334115.iris.fhict.nl/icon/addclicks.svg\" height=\"100px\"></li>";
 		}
 		if (found4 !== null) {
 			console.log("FOUND4");
@@ -87,29 +87,29 @@ window.onload=function(){
 
 
   	// hide localstorage script
-	$(document).ready(function () {
-		console.log('Functie is klaar');
-		$('#hide').click(function () {
-			console.log('geklikt');
-        $(this).siblings().toggle();
-        localStorage.setItem('display', $(this).siblings().is(':visible'));
+  	$(document).ready(function () {
+  		console.log('Functie is klaar');
+  		$('#hide').click(function () {
+  			console.log('geklikt');
+  			$(this).siblings().toggle();
+  			localStorage.setItem('display', $(this).siblings().is(':visible'));
 
-        $('#hide').hide();
-        $('.myclass').hide();
-    });
+  			$('#hide').hide();
+  			$('.myclass').hide();
+  		});
 
-		var block = localStorage.getItem('display');
+  		var block = localStorage.getItem('display');
 
-		if (block == 'true') {
-			$('.myclass').show() && $('#hide').hide();
-			console.log('hierhierhier');
-		}
-		if (block == 'false') {
-			$('.myclass').hide() && $('#hide').hide();
-			console.log('wegwegweg');
-		}
+  		if (block == 'true') {
+  			$('.myclass').show() && $('#hide').hide();
+  			console.log('hierhierhier');
+  		}
+  		if (block == 'false') {
+  			$('.myclass').hide() && $('#hide').hide();
+  			console.log('wegwegweg');
+  		}
 
-	});
+  	});
 
   	// hide button
   	var button = document.getElementById("hide");
@@ -129,15 +129,52 @@ window.onload=function(){
   	logo.style.height = '50px';
   	logo.style.margin = '5px 50px 0px 0px';
 
+  	// hover
+  	// var sourceSwap = function () {
+  	// 	var $this = $(this);
+  	// 	var newSource = $this.data('alt-src');
+  	// 	$this.data('alt-src', $this.attr('src'));
+  	// 	$this.attr('src', newSource);
+  	// }
+  	// $(function() {
+  	// 	$('img[data-alt-src]').each(function() { 
+  	// 		new Image().src = $(this).data('alt-src'); 
+  	// 	}).hover(sourceSwap, sourceSwap); 
 
-  	(function() {
+  	// });
+
+  	// $(document).ready(function(){
+  	// 	$(".icon").attr("src","https://i334115.iris.fhict.nl/icon/addclicks.svg");
+  	// 	$(".change").attr("src","https://i334115.iris.fhict.nl/icon/addclicks-2.svg");
+  	// 	// $(".change").attr('src', '\https://i334115.iris.fhict.nl/icon/addclicks-2.svg');
+  	// });
+
+  	// $(document).ready(function(){
+  	// 	$(".icon").click(function(){
+  	// 		$(".icon").toggleClass("change");
+  	// 	});
+  	// });
+
+var minus = 'https://i334115.iris.fhict.nl/icon/addclicks.svg';
+var plus = 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg';
+
+$('.icon').click(function() {
+  if ($('.icon').attr('src') === plus) {
+    $('.icon').attr('src', minus);
+  } else {
+    $('.icon').attr('src', plus)
+  }
+})
+
+  	$(document).ready(function(){
   		var icons = document.querySelectorAll("#icons");
   		var i = icons.length;
   		var x = icons.length;
   		while (i--) {
-  			icons[i].setAttribute("style", "list-style-type:none; float: left; padding: 0px");
+  			icons[i].setAttribute("style", "list-style-type:none; float: left; padding: 0px; cursor: pointer");
   		}
-  	})();
+  	});
+
 	} // function done
  } //while onload line #1
 
