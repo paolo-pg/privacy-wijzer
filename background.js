@@ -19,16 +19,21 @@ window.onload=function(){
 
 	var page = [document.body];
 	var storedText;
-	var woord1 = "locatie"; // facebook // 
-	var woord2 = "apparaatidentificaties"; //apparaatinfo facebook
-	var woord3 = "advertenties"; //addclicks //facebook // tweakers
-	var woord4 = "derden"; //tweakers //facebook
-	var woord5 = "SessionTime"; //tweakers
+	var woord1 = "locatie"; // FACEBOOK.COM     << CHECK
+	var woord2 = "apparaat"; // BOL.COM     FACEBOOK.COM     << CHECK      
+	var woord3 = "doeleinden"; //AD CLICKS // BOL.COM     FACEBOOK.COM   << CHECK  
+	var woord4 = "derden"; // BOL.COM     TWEAKERS.NET     FACEBOOK.COM   << CHECK  
+	var woord5 = "hoelang"; // BOL.COM    << CHECK
+	var woord6 = "bezoekers" //zoekopdrachten // BOL.COM   TWEAKERS.NET  << CHECK
+	// var woord7 = "functies" //BROWSER // BOL.COM     FACEBOOK.COM  << CHECK  
+	var woord8 = "inzicht" //IP ADRES // BOL.COM     //FACEBOOK.COM  <<  CHECK 
+	var woord9 = "producten" //profiel // TWEAKERS.NET     FACEBOOK.COM << CHECK
+	var woord10 = "telefoons" // FACEBOOK << CHECK
 
 	var websitePrivacy = window.location.href;
 	console.log(websitePrivacy);
 	if (websitePrivacy == 'https://www.facebook.com/') {
-		console.log("FACEBOOK.COM LOCATION")
+		console.log("Facebook.com voowaarden & cookies geladen.N")
 		fetch('https://www.facebook.com/policies/cookies/')
 		.then(function(response) {
 			response.text().then(function(text) {
@@ -39,8 +44,18 @@ window.onload=function(){
 		});
 	}
 	else if (websitePrivacy == 'https://tweakers.net/') {
-		console.log("TWEAKERS.Net LOCATION")
+		console.log("Tweakers.net voowaarden & cookies geladen.")
 		fetch('https://tweakers.net/info/algemene-voorwaarden/cookies/')
+		.then(function(response) {
+			response.text().then(function(text) {
+				storedText = text;
+				done();
+			});
+		});
+	}
+	else if (websitePrivacy == 'https://www.bol.com/nl/') {
+		console.log("bol.com LOCATION")
+		fetch('https://www.bol.com/nl/m/voorwaarden/cookiebeleid/index.html')
 		.then(function(response) {
 			response.text().then(function(text) {
 				storedText = text;
@@ -61,28 +76,50 @@ window.onload=function(){
 		var found2 = storedText.match(woord2);
 		var found3 = storedText.match(woord3);
 		var found4 = storedText.match(woord4);
+		var found5 = storedText.match(woord5);
+		var found6 = storedText.match(woord6);
+		// var found7 = storedText.match(woord7);
+		var found8 = storedText.match(woord8);
+		var found9 = storedText.match(woord9);
+		var found10 = storedText.match(woord10);
 
 		if (found1 !== null) {
-			console.log("FOUND1");
-			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/locatie.svg\" height=\"100px\"></li>";      	
+			console.log("1. Locatie - Facebook");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/locatie.svg\" height=\"75px\"></li>";      	
 		}
 		if (found2 !== null) {
-			console.log("FOUND2");
-			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/apparaat.svg\" height=\"100px\"></li>";
+			console.log("2. Apparaat info - Bol, Facebook");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/apparaat.svg\" height=\"75px\"></li>";
 		}
 		if (found3 !== null) {
-			console.log("FOUND3");
-			div.innerHTML+="<li id='icons'><img class='icon' src=\"http://i334115.iris.fhict.nl/icon/addclicks.svg\" height=\"100px\"></li>";
+			console.log("3. Ad clicks - Bol, Facebook ");
+			div.innerHTML+="<li id='icons'><img class='icon' src=\"http://i334115.iris.fhict.nl/icon/addclicks.svg\" height=\"75px\"></li>";
 		}
 		if (found4 !== null) {
-			console.log("FOUND4");
-			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/dataderde.svg\" height=\"100px\"></li>";
+			console.log("4. Data derden - Bol, Tweakers, Facebook");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/dataderde.svg\" height=\"75px\"></li>";
 		}
-		if (found4 !== null) {
-			console.log("FOUND4");
-			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/tijdendatum.svg\" height=\"100px\"></li>";
+		if (found5 !== null) {
+			console.log("5. Tijd en datum - Bol");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/tijdendatum.svg\" height=\"75px\"></li>";
 		}
-		else if (found1 == null && found2 == null && found3 == null && found4 == null) {
+		if (found6 !== null) {
+			console.log("6. Zoekopdrachten - Bol, Tweakers");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/zoekopdrachten.svg\" height=\"75px\"></li>";
+		}
+		if (found8 !== null) {
+			console.log("8. IP adres - Bol, Facebook");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/ipadres.svg\" height=\"75px\"></li>";
+		}
+		if (found9 !== null) {
+			console.log("9. Profielinformatie - Tweakers, Facebook");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/profiel.svg\" height=\"75px\"></li>";
+		}
+		if (found10 !== null) {
+			console.log("10. Telefoonnummer - Facebook");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/telefoonnummer.svg\" height=\"75px\"></li>";
+		}
+		else if (found1 == null && found2 == null && found3 == null && found4 == null && found5 == null && found6 == null && found7 == null && found8 == null && found9 == null) {
 			div.innerHTML = "Deze website maakt geen gebruik van je gegevens.";
 		};
 

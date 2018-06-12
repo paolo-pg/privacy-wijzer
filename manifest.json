@@ -27,7 +27,7 @@
     //Set your address you want the extension will work in mataches!!! 
  // "matches": ["<all_urls>"],
   "js":["jquery.1.9.1.min.js", "background.js"],
-  "matches": ["*://facebook.com/", "*://*.facebook.com/", "*://tweakers.net/", "*://*.tweakers.net/"],
+  "matches": ["*://facebook.com/", "*://*.facebook.com/", "*://tweakers.net/", "*://*.tweakers.net/", "*://bol.com/nl/", "*://*.bol.com/nl/"],
  // "matches": ["https://*.nu.nl/*", "https://*.nu.nl/*", "http://www.tweakers.net/*", "https://www.tweakers.net/*"],
   "run_at": "document_end"
  }
