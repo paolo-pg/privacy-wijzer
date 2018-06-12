@@ -93,11 +93,11 @@ window.onload=function(){
 		}
 		if (found3 !== null) {
 			console.log("3. Ad clicks - Bol, Facebook ");
-			div.innerHTML+="<li id='icons'><img class='icon' src=\"http://i334115.iris.fhict.nl/icon/addclicks.svg\" height=\"75px\"></li>";
+			div.innerHTML+="<li id='icons'><img class='icon-border-1' src=\"http://i334115.iris.fhict.nl/icon/addclicksborder.svg\" height=\"75px\"></li>";
 		}
 		if (found4 !== null) {
 			console.log("4. Data derden - Bol, Tweakers, Facebook");
-			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/dataderde.svg\" height=\"75px\"></li>";
+			div.innerHTML+="<li id='icons'><img class='icon-border-2' src=\"http://i334115.iris.fhict.nl/icon/dataderdeborder.svg\" height=\"75px\"></li>";
 		}
 		if (found5 !== null) {
 			console.log("5. Tijd en datum - Bol");
@@ -171,23 +171,46 @@ window.onload=function(){
   	logo.style.height = '50px';
   	logo.style.margin = '5px 50px 0px 0px';
 
-  	$(".icon").hover(function(e){
-  		$(this).attr('src', 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg');
+  	// hover addclicks
+  	$(".icon-border-1").hover(function(e){
+  		$(this).attr('src', 'http://i334115.iris.fhict.nl/icon/addclicks-2.svg');
   		e.preventDefault();
   	}, function(){
-  		$(this).attr('src', 'https://i334115.iris.fhict.nl/icon/addclicks.svg');
+  		$(this).attr('src', 'http://i334115.iris.fhict.nl/icon/addclicksborder.svg');
   	});
 
+  	// click addclicks
+  	var plus1 = 'http://i334115.iris.fhict.nl/icon/addclicksborder.svg';
+  	var minus1 = 'http://i334115.iris.fhict.nl/icon/addclicks-2.svg';
 
-  	var plus = 'https://i334115.iris.fhict.nl/icon/addclicks.svg';
-  	var minus = 'https://i334115.iris.fhict.nl/icon/addclicks-2.svg';
-
-  	$('.icon').click(function() {
-  		$(".icon").hover(function(e){
-  			if ($('.icon').attr('src') === plus) {
-  				$('.icon').attr('src', minus);
+  	$('.icon-border-1').click(function() {
+  		$(".icon-border-1").hover(function(e){
+  			if ($('.icon-border-1').attr('src') === plus1) {
+  				$('.icon-border-1').attr('src', minus1);
   			} else {
-  				$('.icon').attr('src', plus)
+  				$('.icon-border-1').attr('src', plus1)
+  			}
+  		});	
+  	})
+
+  	// hover dataderde
+  	$(".icon-border-2").hover(function(e){
+  		$(this).attr('src', 'http://i334115.iris.fhict.nl/icon/dataderde-2.svg');
+  		e.preventDefault();
+  	}, function(){
+  		$(this).attr('src', 'http://i334115.iris.fhict.nl/icon/dataderdeborder.svg');
+  	});
+
+  	// click dataderde
+  	var plus2 = 'http://i334115.iris.fhict.nl/icon/dataderde-2.svg';
+  	var minus2 = 'http://i334115.iris.fhict.nl/icon/dataderdeborder.svg';
+
+  	$('.icon-border-2').click(function() {
+  		$(".icon-border-2").hover(function(e){
+  			if ($('.icon-border-2').attr('src') === plus2) {
+  				$('.icon-border-2').attr('src', minus2);
+  			} else {
+  				$('.icon-border-2').attr('src', plus2)
   			}
   		});	
   	})
