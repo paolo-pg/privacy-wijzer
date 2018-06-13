@@ -25,7 +25,7 @@ window.onload=function(){
 	var woord4 = "derden"; // BOL.COM     TWEAKERS.NET     FACEBOOK.COM   << CHECK  
 	var woord5 = "hoelang"; // BOL.COM    << CHECK
 	var woord6 = "bezoekers" //zoekopdrachten // BOL.COM   TWEAKERS.NET  << CHECK
-	// var woord7 = "functies" //BROWSER // BOL.COM     FACEBOOK.COM  << CHECK  
+	var woord7 = "functies" //BROWSER // BOL.COM     FACEBOOK.COM  << CHECK  
 	var woord8 = "inzicht" //IP ADRES // BOL.COM     //FACEBOOK.COM  <<  CHECK 
 	var woord9 = "producten" //profiel // TWEAKERS.NET     FACEBOOK.COM << CHECK
 	var woord10 = "telefoons" // FACEBOOK << CHECK
@@ -78,7 +78,7 @@ window.onload=function(){
 		var found4 = storedText.match(woord4);
 		var found5 = storedText.match(woord5);
 		var found6 = storedText.match(woord6);
-		// var found7 = storedText.match(woord7);
+		var found7 = storedText.match(woord7);
 		var found8 = storedText.match(woord8);
 		var found9 = storedText.match(woord9);
 		var found10 = storedText.match(woord10);
@@ -107,6 +107,10 @@ window.onload=function(){
 			console.log("6. Zoekopdrachten - Bol, Tweakers");
 			div.innerHTML+="<li id='icons'><img class='icon-border-2' src=\"http://i334115.iris.fhict.nl/icon/zoekopdrachtenborder.svg\" height=\"75px\"></li>";
 		}
+		if (found7 !== null) {
+			console.log("7. Browser - Bol, Tweakers");
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/browser.svg\" height=\"75px\"></li>";
+		}
 		if (found8 !== null) {
 			console.log("8. IP adres - Bol, Facebook");
 			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/ipadres.svg\" height=\"75px\"></li>";
@@ -119,7 +123,7 @@ window.onload=function(){
 			console.log("10. Telefoonnummer - Facebook");
 			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/telefoonnummer.svg\" height=\"75px\"></li>";
 		}
-		else if (found1 == null && found2 == null && found3 == null && found4 == null && found5 == null && found6 == null && found7 == null && found8 == null && found9 == null) {
+		else if (found1 == null && found2 == null && found3 == null && found4 == null && found5 == null && found6 == null && found7 == null && found8 == null && found9 == null && found10 == null) {
 			div.innerHTML = "Deze website maakt geen gebruik van je gegevens.";
 		};
 
