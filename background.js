@@ -97,7 +97,7 @@ window.onload=function(){
 		}
 		if (found4 !== null) {
 			console.log("4. Data derden - Bol, Tweakers, Facebook");
-			div.innerHTML+="<li id='icons'><img class='icon-border-2' src=\"http://i334115.iris.fhict.nl/icon/dataderdeborder.svg\" height=\"75px\"></li>";
+			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/dataderde.svg\" height=\"75px\"></li>";
 		}
 		if (found5 !== null) {
 			console.log("5. Tijd en datum - Bol");
@@ -105,7 +105,7 @@ window.onload=function(){
 		}
 		if (found6 !== null) {
 			console.log("6. Zoekopdrachten - Bol, Tweakers");
-			div.innerHTML+="<li id='icons'><img src=\"http://i334115.iris.fhict.nl/icon/zoekopdrachten.svg\" height=\"75px\"></li>";
+			div.innerHTML+="<li id='icons'><img class='icon-border-2' src=\"http://i334115.iris.fhict.nl/icon/zoekopdrachtenborder.svg\" height=\"75px\"></li>";
 		}
 		if (found8 !== null) {
 			console.log("8. IP adres - Bol, Facebook");
@@ -195,15 +195,15 @@ window.onload=function(){
 
   	// hover dataderde
   	$(".icon-border-2").hover(function(e){
-  		$(this).attr('src', 'http://i334115.iris.fhict.nl/icon/dataderde-2.svg');
+  		$(this).attr('src', 'http://i334115.iris.fhict.nl/icon/zoekopdrachten-2.svg');
   		e.preventDefault();
   	}, function(){
-  		$(this).attr('src', 'http://i334115.iris.fhict.nl/icon/dataderdeborder.svg');
+  		$(this).attr('src', 'http://i334115.iris.fhict.nl/icon/zoekopdrachtenborder.svg');
   	});
 
   	// click dataderde
-  	var plus2 = 'http://i334115.iris.fhict.nl/icon/dataderde-2.svg';
-  	var minus2 = 'http://i334115.iris.fhict.nl/icon/dataderdeborder.svg';
+  	var plus2 = 'http://i334115.iris.fhict.nl/icon/zoekopdrachten-2.svg';
+  	var minus2 = 'http://i334115.iris.fhict.nl/icon/zoekopdrachtenborder.svg';
 
   	$('.icon-border-2').click(function() {
   		$(".icon-border-2").hover(function(e){
