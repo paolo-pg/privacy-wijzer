@@ -32,6 +32,7 @@ window.onload=function(){
 
 	var websitePrivacy = window.location.href;
 	console.log(websitePrivacy);
+
 	if (websitePrivacy == 'https://www.facebook.com/') {
 		console.log("Facebook.com voowaarden & cookies geladen.N")
 		fetch('https://www.facebook.com/policies/cookies/')
@@ -56,6 +57,16 @@ window.onload=function(){
 	else if (websitePrivacy == 'https://www.bol.com/nl/') {
 		console.log("bol.com LOCATION")
 		fetch('https://www.bol.com/nl/m/voorwaarden/cookiebeleid/index.html')
+		.then(function(response) {
+			response.text().then(function(text) {
+				storedText = text;
+				done();
+			});
+		});
+	}
+	else if (websitePrivacy == 'http://jovalo.nl/prievasieweizer/') {
+		console.log("privacywijzer.nl LOCATION")
+		fetch('http://www.jovalo.nl/prievasieweizer/empty')
 		.then(function(response) {
 			response.text().then(function(text) {
 				storedText = text;
@@ -125,11 +136,11 @@ window.onload=function(){
 		}
 		else if (found1 == null && found2 == null && found3 == null && found4 == null && found5 == null && found6 == null && found7 == null && found8 == null && found9 == null && found10 == null) {
 			div.innerHTML = "Deze website maakt geen gebruik van je gegevens.";
+			div.style.background = 'rgba(255, 255, 255, 1)';
 		};
 
 		div.innerHTML += "<img id='logo-privacy' src=\"http://i334115.iris.fhict.nl/icon/logo.svg\" height=\"200px\">";
 		div.innerHTML += "<br><p id='newLine'><button id='hide'>Verbergen</button></p>";
-
 
 
   	// hide localstorage script
@@ -161,19 +172,20 @@ window.onload=function(){
   	var button = document.getElementById("hide");
   	document.getElementById("newLine").style.clear = 'left';
   	document.getElementById("newLine").style.margin = '0px';
-  	button.style.margin = '0px 55px 0px 0px';
+  	button.style.margin = '5px 55px 0px 0px';
   	button.style.padding = '5px 12px 5px 12px';
   	button.style.background = '#db0033';
   	button.style.color = '#fff';
   	button.style.cursor = 'pointer';
   	button.style.border = 'none';
+  	button.style.clear = 'both';
   	button.style.cssFloat = 'right';
   	
   	// logo
   	var logo = document.getElementById("logo-privacy");
   	logo.style.cssFloat = 'right';
   	logo.style.height = '50px';
-  	logo.style.margin = '5px 50px 0px 0px';
+  	logo.style.margin = '5px 50px 15px 0px';
 
   	// hover addclicks
   	$(".icon-border-1").hover(function(e){
